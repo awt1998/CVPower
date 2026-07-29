@@ -48,6 +48,7 @@ src/
 │   │   ├── operations.ts       # pure state transforms (all business logic)
 │   │   ├── migrations.ts  serialization.ts  persistence.ts
 │   │   ├── store.ts  selectors.ts  index.ts   # public API barrel
+│   │   ├── components/         # builder UI: steps/, fields/, parts/, hooks/
 │   │   └── __tests__/          # vitest unit tests
 │   ├── scoring/                # M3 — scoring engine
 │   ├── matching/               # M4 — job-matching engine

@@ -2,7 +2,7 @@
  * Current persisted schema version for the resume engine. Bump this whenever the
  * shape of persisted data changes, and add a matching step in `migrations.ts`.
  */
-export const RESUME_SCHEMA_VERSION = 1;
+export const RESUME_SCHEMA_VERSION = 2;
 
 /** LocalStorage key for the persisted resume store. */
 export const RESUME_STORAGE_KEY = 'cvpower:resume-store';
@@ -21,6 +21,7 @@ export const ARRAY_SECTION_KEYS = [
   'projects',
   'certifications',
   'languages',
+  'references',
 ] as const;
 
 /** All resume section keys (array sections + the structured `custom` section). */

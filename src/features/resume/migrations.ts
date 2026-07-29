@@ -33,6 +33,32 @@ const migrationSteps: Record<number, MigrationStep> = {
     }
     return state;
   },
+
+  // v1 -> v2: the `references` section was added. Backfill an empty array on every
+  // existing resume so it satisfies the current schema.
+  2: (state) => {
+    const resumes = state.resumes;
+    if (!resumes || typeof resumes !== 'object' || Array.isArray(resumes)) return state;
+
+    const next: UnknownRecord = {};
+    for (const [id, entry] of Object.entries(resumes as UnknownRecord)) {
+      if (entry && typeof entry === 'object') {
+        const resume = entry as UnknownRecord;
+        const sections =
+          resume.sections && typeof resume.sections === 'object'
+            ? (resume.sections as UnknownRecord)
+            : {};
+        next[id] = {
+          ...resume,
+          schemaVersion: 2,
+          sections: { references: [], ...sections },
+        };
+      } else {
+        next[id] = entry;
+      }
+    }
+    return { ...state, resumes: next };
+  },
 };
 
 /**

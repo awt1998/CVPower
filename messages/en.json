@@ -33,6 +33,180 @@
     "badge": "100% on-device",
     "tooltip": "Your resume and job data never leave your browser."
   },
+  "builder": {
+    "title": "Resume Builder",
+    "subtitle": "Edit your resume. Everything saves automatically on your device.",
+    "prev": "Previous",
+    "next": "Next",
+    "stepsNav": "Resume sections",
+    "steps": {
+      "personal": "Personal Info",
+      "summary": "Summary",
+      "experience": "Work Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "certifications": "Certifications",
+      "projects": "Projects",
+      "references": "References"
+    },
+    "common": {
+      "moveUp": "Move up",
+      "moveDown": "Move down",
+      "remove": "Remove"
+    },
+    "autosave": {
+      "saved": "Saved on your device",
+      "savedAt": "Saved at {time}"
+    },
+    "switcher": {
+      "label": "Active resume",
+      "untitled": "Untitled resume",
+      "new": "New",
+      "duplicate": "Duplicate",
+      "delete": "Delete",
+      "confirmTitle": "Delete this resume?",
+      "confirmBody": "\"{title}\" will be permanently removed from this device. This cannot be undone.",
+      "cancel": "Cancel"
+    },
+    "backup": {
+      "export": "Export JSON",
+      "import": "Import JSON",
+      "exported": "Backup downloaded",
+      "imported": "Backup imported",
+      "invalid": "That file is not a valid CVPower backup.",
+      "failed": "Could not import that file."
+    },
+    "personal": {
+      "resumeName": "Resume name",
+      "resumeNameHint": "Only you see this — it labels the resume in your list.",
+      "fullName": "Full name",
+      "headline": "Professional headline",
+      "headlinePlaceholder": "Senior Product Designer",
+      "email": "Email",
+      "phone": "Phone",
+      "city": "City",
+      "country": "Country",
+      "website": "Website",
+      "links": "Links",
+      "linkLabel": "Label",
+      "linkUrl": "URL",
+      "addLink": "Add link",
+      "removeLink": "Remove link",
+      "moveUp": "Move up",
+      "moveDown": "Move down"
+    },
+    "summary": {
+      "label": "Professional summary",
+      "hint": "2–4 sentences highlighting your strengths and goals.",
+      "placeholder": "Experienced professional with…"
+    },
+    "experience": {
+      "add": "Add experience",
+      "empty": "No work experience yet.",
+      "description": "List roles in reverse-chronological order.",
+      "fallback": "New role",
+      "role": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "current": "I currently work here",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "summaryField": "Role summary",
+      "highlights": "Key achievements",
+      "addHighlight": "Add achievement",
+      "highlightPlaceholder": "Increased conversion by 20%…",
+      "technologies": "Tools & technologies",
+      "technologiesPlaceholder": "Type and press Enter"
+    },
+    "education": {
+      "add": "Add education",
+      "empty": "No education yet.",
+      "description": "Add degrees, diplomas, and courses.",
+      "fallback": "New qualification",
+      "institution": "Institution",
+      "degree": "Degree",
+      "fieldOfStudy": "Field of study",
+      "grade": "Grade / GPA",
+      "current": "I am currently studying here",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "highlights": "Highlights",
+      "addHighlight": "Add highlight"
+    },
+    "skills": {
+      "add": "Add skill group",
+      "empty": "No skills yet.",
+      "description": "Group related skills together.",
+      "fallback": "New skill group",
+      "category": "Category",
+      "categoryPlaceholder": "e.g. Front-end",
+      "level": "Level",
+      "noLevel": "No level",
+      "items": "Skills",
+      "itemsPlaceholder": "Type a skill and press Enter",
+      "itemsHint": "Add as many as you like.",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "expert": "Expert"
+      }
+    },
+    "languages": {
+      "add": "Add language",
+      "empty": "No languages yet.",
+      "description": "Add languages you speak.",
+      "fallback": "New language",
+      "name": "Language",
+      "level": "Proficiency",
+      "proficiency": {
+        "elementary": "Elementary",
+        "limited": "Limited working",
+        "professional": "Professional working",
+        "full": "Full professional",
+        "native": "Native / bilingual"
+      }
+    },
+    "certifications": {
+      "add": "Add certification",
+      "empty": "No certifications yet.",
+      "description": "Add licenses and certifications.",
+      "fallback": "New certification",
+      "name": "Name",
+      "issuer": "Issuer",
+      "date": "Issue date",
+      "expiry": "Expiry date",
+      "url": "Credential URL"
+    },
+    "projects": {
+      "add": "Add project",
+      "empty": "No projects yet.",
+      "description": "Showcase relevant work.",
+      "fallback": "New project",
+      "name": "Project name",
+      "url": "URL",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "descriptionField": "Description",
+      "highlights": "Highlights",
+      "addHighlight": "Add highlight",
+      "technologies": "Technologies"
+    },
+    "references": {
+      "add": "Add reference",
+      "empty": "No references yet.",
+      "description": "Add references, or leave this empty if you prefer to provide them on request.",
+      "fallback": "New reference",
+      "name": "Name",
+      "title": "Job title",
+      "company": "Company",
+      "relationship": "Relationship",
+      "email": "Email",
+      "phone": "Phone",
+      "note": "Note"
+    }
+  },
   "home": {
     "heroTitle": "The best free resume optimizer.",
     "heroSubtitle": "Match your resume to any job, fix what matters, and export an ATS-safe PDF — entirely in your browser. Nothing is ever uploaded.",

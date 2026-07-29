@@ -11,6 +11,7 @@ import type {
   linkSchema,
   locationSchema,
   projectSchema,
+  referenceSchema,
   resumeDataSchema,
   resumeMetaSchema,
   resumeSchema,
@@ -32,6 +33,7 @@ export type SkillGroup = z.infer<typeof skillGroupSchema>;
 export type ProjectItem = z.infer<typeof projectSchema>;
 export type CertificationItem = z.infer<typeof certificationSchema>;
 export type LanguageItem = z.infer<typeof languageSchema>;
+export type ReferenceItem = z.infer<typeof referenceSchema>;
 export type CustomItem = z.infer<typeof customItemSchema>;
 export type CustomSection = z.infer<typeof customSectionSchema>;
 export type ResumeSections = z.infer<typeof resumeSectionsSchema>;
@@ -54,6 +56,7 @@ export interface ArraySectionItemMap {
   projects: ProjectItem;
   certifications: CertificationItem;
   languages: LanguageItem;
+  references: ReferenceItem;
 }
 
 /** The item type stored in a given array section. */

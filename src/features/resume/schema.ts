@@ -25,8 +25,8 @@ const optionalUrl = z.union([z.string().url(), z.literal('')]).optional();
 
 export const linkSchema = z.object({
   id: idSchema,
-  label: z.string().trim().min(1).max(60),
-  url: z.string().url(),
+  label: z.string().trim().max(60).optional(),
+  url: optionalUrl,
 });
 
 export const locationSchema = z.object({
@@ -106,6 +106,17 @@ export const languageSchema = z.object({
   proficiency: z.enum(LANGUAGE_PROFICIENCIES),
 });
 
+export const referenceSchema = z.object({
+  id: idSchema,
+  name: z.string().trim().max(160),
+  title: z.string().trim().max(160).optional(),
+  company: z.string().trim().max(160).optional(),
+  relationship: z.string().trim().max(160).optional(),
+  email: optionalEmail,
+  phone: z.string().trim().max(40).optional(),
+  summary: z.string().max(1000).optional(),
+});
+
 export const customItemSchema = z.object({
   id: idSchema,
   title: z.string().trim().max(160).optional(),
@@ -128,6 +139,7 @@ export const resumeSectionsSchema = z.object({
   projects: z.array(projectSchema),
   certifications: z.array(certificationSchema),
   languages: z.array(languageSchema),
+  references: z.array(referenceSchema),
   custom: z.array(customSectionSchema),
 });
 

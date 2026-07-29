@@ -17,7 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added shared `lib/id` and `lib/debounce` utilities.
 - Added Vitest unit tests for schema, operations, migrations, serialization,
   persistence (debounce), and the store.
-- No UI: editor, dashboard, scoring, matching, PDF, and AI are out of scope for M2.
+
+### Resume Builder (UI)
+- Added a **References** section to the data model, bumped the schema to **v2**,
+  and added a v1→v2 migration that backfills it on existing data.
+- Built the `/builder` route: a multi-step editor (Personal Info, Summary,
+  Experience, Education, Skills, Languages, Certifications, Projects, References)
+  bound directly to the Zustand store with autosave and Zod validation on change.
+- Dynamic add/remove/reorder for every repeatable section; multiple resumes with
+  create/duplicate/delete; JSON import/export; responsive layout; RTL/LTR; native
+  keyboard-accessible controls.
+- Added EN/AR translations for the whole builder, plus tests for field validation
+  and the reorder utilities.
 
 ### Fixed
 - **i18n startup crash:** removed `hasLocale` (a next-intl **v4-only** export) which

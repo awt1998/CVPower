@@ -46,6 +46,7 @@ function withNewIds(resume: Resume): Resume {
     id: createId(),
   }));
   clone.sections.languages = clone.sections.languages.map((x) => ({ ...x, id: createId() }));
+  clone.sections.references = clone.sections.references.map((x) => ({ ...x, id: createId() }));
   clone.sections.custom = clone.sections.custom.map((section) => ({
     ...section,
     id: createId(),
@@ -85,7 +86,7 @@ function getArraySection<K extends ArraySectionKey>(
   resume: Resume,
   key: K,
 ): ArraySectionItem<K>[] {
-  return resume.sections[key] as ArraySectionItem<K>[];
+  return resume.sections[key] as unknown as ArraySectionItem<K>[];
 }
 
 /** Reorder a list to match `orderedIds`; unknown ids are ignored, missing ids kept at end. */

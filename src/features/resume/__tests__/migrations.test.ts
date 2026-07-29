@@ -13,6 +13,22 @@ describe('runMigrations', () => {
     expect(migrated.activeResumeId).toBe('a');
   });
 
+  it('migrates v1 -> v2 by backfilling the references section', () => {
+    const v1 = {
+      schemaVersion: 1,
+      resumes: {
+        a: { id: 'a', sections: { experience: [] } },
+      },
+      order: ['a'],
+      activeResumeId: 'a',
+    };
+    const migrated = runMigrations(v1, 1);
+    expect(migrated.schemaVersion).toBe(RESUME_SCHEMA_VERSION);
+    expect(migrated.resumes['a']!.sections.references).toEqual([]);
+    // Existing sections are preserved.
+    expect(migrated.resumes['a']!.sections.experience).toEqual([]);
+  });
+
   it('returns empty data for non-object input', () => {
     const migrated = runMigrations(null, 0);
     expect(migrated.order).toEqual([]);

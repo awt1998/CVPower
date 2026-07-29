@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import * as ops from '../operations';
-import { createEmptyResumeData, createExperience } from '../factory';
+import { createEmptyResumeData, createExperience, createReference } from '../factory';
 
 const seed = () => createEmptyResumeData();
 
@@ -102,6 +102,16 @@ describe('resume operations', () => {
     const after = data.resumes[created.id]!.meta.updatedAt;
     expect(new Date(after).getTime()).toBeGreaterThanOrEqual(new Date(before).getTime());
     expect(data.resumes[created.id]!.basics.fullName).toBe('Sara');
+  });
+
+  it('supports the references section via generic array ops', () => {
+    const created = ops.createResume(seed());
+    let data = created.data;
+    const ref = createReference({ name: 'Jane Doe', relationship: 'Manager' });
+    data = ops.addArrayItem(data, created.id, 'references', ref);
+    expect(data.resumes[created.id]!.sections.references[0]!.name).toBe('Jane Doe');
+    data = ops.removeArrayItem(data, created.id, 'references', ref.id);
+    expect(data.resumes[created.id]!.sections.references).toHaveLength(0);
   });
 
   it('does not mutate the input data (immutability)', () => {

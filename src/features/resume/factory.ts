@@ -11,6 +11,7 @@ import type {
   LanguageItem,
   Link,
   ProjectItem,
+  ReferenceItem,
   Resume,
   ResumeData,
   ResumeSections,
@@ -38,6 +39,7 @@ export function createEmptySections(): ResumeSections {
     projects: [],
     certifications: [],
     languages: [],
+    references: [],
     custom: [],
   };
 }
@@ -122,6 +124,12 @@ export function createLanguage(
   overrides: Partial<Omit<LanguageItem, 'id'>> = {},
 ): LanguageItem {
   return { id: createId(), name: '', proficiency: 'professional', ...overrides };
+}
+
+export function createReference(
+  overrides: Partial<Omit<ReferenceItem, 'id'>> = {},
+): ReferenceItem {
+  return { id: createId(), name: '', ...overrides };
 }
 
 export function createCustomItem(
