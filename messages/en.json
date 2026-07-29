@@ -38,6 +38,7 @@
     "subtitle": "Edit your resume. Everything saves automatically on your device.",
     "prev": "Previous",
     "next": "Next",
+    "preview": "Preview & Export",
     "stepsNav": "Resume sections",
     "steps": {
       "personal": "Personal Info",
@@ -205,6 +206,34 @@
       "email": "Email",
       "phone": "Phone",
       "note": "Note"
+    }
+  },
+  "preview": {
+    "title": "Preview & Export",
+    "subtitle": "See your resume as employers will, then export an ATS-safe PDF.",
+    "backToBuilder": "Back to editor",
+    "export": "Export PDF",
+    "empty": "You don't have a resume yet.",
+    "goToBuilder": "Go to the builder"
+  },
+  "templates": {
+    "choose": "Choose a template",
+    "unnamed": "Your Name",
+    "present": "Present",
+    "names": {
+      "classic": "Classic",
+      "modern": "Modern"
+    },
+    "sections": {
+      "summary": "Summary",
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "projects": "Projects",
+      "certifications": "Certifications",
+      "languages": "Languages",
+      "references": "References",
+      "custom": "Additional"
     }
   },
   "home": {

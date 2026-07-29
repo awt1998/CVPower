@@ -105,14 +105,22 @@ export function BuilderShell() {
             <ChevronLeft className="size-4 rtl:rotate-180" />
             {t('prev')}
           </Button>
-          <Button
-            type="button"
-            disabled={isLast}
-            onClick={() => setStepIndex((i) => Math.min(BUILDER_STEPS.length - 1, i + 1))}
-          >
-            {t('next')}
-            <ChevronRight className="size-4 rtl:rotate-180" />
-          </Button>
+          {isLast ? (
+            <Button asChild>
+              <Link href="/preview">
+                <Eye className="size-4" />
+                {t('preview')}
+              </Link>
+            </Button>
+          ) : (
+            <Button
+              type="button"
+              onClick={() => setStepIndex((i) => Math.min(BUILDER_STEPS.length - 1, i + 1))}
+            >
+              {t('next')}
+              <ChevronRight className="size-4 rtl:rotate-180" />
+            </Button>
+          )}
         </div>
       </section>
     </div>

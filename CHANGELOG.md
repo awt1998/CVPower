@@ -30,6 +30,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added EN/AR translations for the whole builder, plus tests for field validation
   and the reorder utilities.
 
+### Preview, Templates & PDF Export
+- Added the **templates** feature: a shared, ATS-safe, single-column
+  `ResumeDocument` with two themes (**classic**, **modern**); template choice is
+  stored per resume (`meta.templateId`).
+- Added the **pdf** feature: export via the browser's native print pipeline
+  (`window.print()` + `@media print`), giving real selectable text (ATS-safe),
+  correct fonts, and RTL — no new dependencies.
+- Added the `/preview` route with a live preview, template picker, and Export
+  button; wired a Preview/Export action into the builder (replacing the disabled
+  "Next" on the final step).
+- EN/AR translations and unit tests for template formatting + the theme registry.
+
 ### Fixed
 - **i18n startup crash:** removed `hasLocale` (a next-intl **v4-only** export) which
   broke the app on the installed next-intl v3. Locale validation now uses a local
