@@ -14,6 +14,7 @@ import { useResumeStore } from '@/features/resume/store';
 import { ResumeSelect } from '@/features/resume/components/parts/resume-select';
 import { analyzeResume } from '@/features/scoring';
 import { useJobStore } from '@/features/matching/store';
+import { AnalyzeIntro } from './analyze-intro';
 import { ScoreRing } from './score-ring';
 import { SubScoreList } from './subscore-list';
 import { RequirementList } from './requirement-list';
@@ -62,6 +63,8 @@ export function AnalyzeShell() {
 
   return (
     <div className="grid gap-6">
+      <AnalyzeIntro />
+
       <div className="max-w-sm">
         <ResumeSelect />
       </div>
