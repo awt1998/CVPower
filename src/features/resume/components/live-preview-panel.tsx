@@ -35,7 +35,7 @@ export function LivePreviewPanel() {
       <aside className="hidden xl:block">
         <div className="sticky top-20">
           <p className="mb-2 text-sm font-semibold">{t('title')}</p>
-          <div className="max-h-[calc(100dvh-8rem)] overflow-y-auto rounded-xl border bg-muted/30 p-3">
+          <div className="max-h-[calc(100dvh-8rem)] overflow-y-auto rounded-xl bg-neutral-200/50 p-4 dark:bg-neutral-900/60">
             <PreviewInner />
           </div>
         </div>

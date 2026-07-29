@@ -21,9 +21,9 @@ export function ResumeDocument({ resume, theme }: ResumeDocumentProps) {
   const { basics, sections } = resume;
 
   const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-    <section className="mt-5 first:mt-0">
+    <section className="mt-6 first:mt-0">
       <h2 className={theme.headingClass}>{title}</h2>
-      <div className="space-y-3 text-sm leading-relaxed text-neutral-800">{children}</div>
+      <div className="space-y-3.5 text-sm leading-relaxed text-neutral-800">{children}</div>
     </section>
   );
 
@@ -56,10 +56,18 @@ export function ResumeDocument({ resume, theme }: ResumeDocumentProps) {
 
   return (
     <article className={cn('text-neutral-800', theme.fontClass)}>
-      <header className="border-b border-neutral-200 pb-4">
+      <header className="border-b border-neutral-200 pb-5 text-center">
         <h1 className={theme.nameClass}>{basics.fullName || t('unnamed')}</h1>
-        {basics.headline && <p className="mt-0.5 text-base text-neutral-600">{basics.headline}</p>}
-        {contact && <p className="mt-2 text-sm text-neutral-600">{contact}</p>}
+        {basics.headline && (
+          <p className="mt-1 text-sm font-medium uppercase tracking-wide text-neutral-500">
+            {basics.headline}
+          </p>
+        )}
+        {contact && (
+          <p className="mx-auto mt-2.5 max-w-xl text-xs leading-relaxed text-neutral-500">
+            {contact}
+          </p>
+        )}
       </header>
 
       {basics.summary?.trim() && (

@@ -14,17 +14,17 @@ export const TEMPLATE_THEMES: Record<TemplateId, TemplateTheme> = {
   classic: {
     id: 'classic',
     fontClass: 'font-serif',
-    nameClass: 'text-3xl font-bold text-neutral-900',
+    nameClass: 'text-3xl font-bold tracking-tight text-neutral-900',
     headingClass:
-      'mb-2 border-b border-neutral-300 pb-1 text-xs font-bold uppercase tracking-widest text-neutral-900',
+      'mb-2.5 border-b border-neutral-200 pb-1 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-800',
     accentClass: 'text-neutral-900',
   },
   modern: {
     id: 'modern',
     fontClass: 'font-sans',
-    nameClass: 'text-3xl font-bold text-indigo-700',
+    nameClass: 'text-3xl font-bold tracking-tight text-indigo-700',
     headingClass:
-      'mb-2 border-b-2 border-indigo-200 pb-1 text-xs font-semibold uppercase tracking-widest text-indigo-700',
+      'mb-2.5 border-b-2 border-indigo-100 pb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-indigo-600',
     accentClass: 'text-indigo-700',
   },
 };
