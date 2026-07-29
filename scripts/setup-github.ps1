@@ -26,4 +26,11 @@ if (git status --porcelain) {
 }
 
 git push -u origin main
+if ($LASTEXITCODE -ne 0) {
+  Write-Host "Push failed." -ForegroundColor Red
+  Write-Host "The repository probably does not exist on GitHub yet. Create it first, e.g.:" -ForegroundColor Yellow
+  Write-Host "  gh repo create awt1998/CVPower --private --source '.' --remote origin --push" -ForegroundColor Yellow
+  Write-Host "or create an empty repo named 'CVPower' at https://github.com/new (no README), then re-run this script." -ForegroundColor Yellow
+  exit 1
+}
 Write-Host "Pushed to $RepoUrl" -ForegroundColor Green
