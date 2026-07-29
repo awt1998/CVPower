@@ -2,7 +2,18 @@ import type { MetadataRoute } from 'next';
 import { siteConfig } from '@/config/site';
 import { routing } from '@/i18n/routing';
 
-const PATHS = ['', '/dashboard', '/builder', '/analyze', '/preview', '/cover-letter'];
+const PATHS = [
+  '',
+  '/dashboard',
+  '/builder',
+  '/analyze',
+  '/preview',
+  '/cover-letter',
+  '/health',
+  '/recruiter',
+  '/progress',
+  '/versions',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

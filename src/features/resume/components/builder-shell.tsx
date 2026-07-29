@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Link } from '@/i18n/navigation';
+import { LiveAtsPanel } from '@/features/ats';
 import { useMounted } from '@/hooks/use-mounted';
 import { useResumeStore } from '../store';
 import { useActiveResume } from './hooks/use-active-resume';
@@ -65,7 +66,7 @@ export function BuilderShell() {
   const isLast = stepIndex === BUILDER_STEPS.length - 1;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
+    <div className="grid gap-8 lg:grid-cols-[260px_1fr] xl:grid-cols-[260px_1fr_320px]">
       <aside className="grid content-start gap-6">
         <ResumeSwitcher />
         <ImportExport />
@@ -123,6 +124,8 @@ export function BuilderShell() {
           )}
         </div>
       </section>
+
+      <LiveAtsPanel />
     </div>
   );
 }

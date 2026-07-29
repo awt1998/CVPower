@@ -149,6 +149,7 @@ export const resumeMetaSchema = z.object({
   updatedAt: z.string().min(1),
   templateId: z.string().max(80).optional(),
   locale: z.string().max(10).optional(),
+  lastUsedAt: z.string().optional(),
 });
 
 export const resumeSchema = z.object({

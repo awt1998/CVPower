@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
+import { AchievementDialog } from '@/features/ai';
 import { createExperience } from '../../factory';
 import { ArraySection } from '../parts/array-section';
 import { TextField } from '../fields/text-field';
@@ -60,6 +61,12 @@ export function ExperienceStep({ resume }: { resume: Resume }) {
             onChange={(highlights) => update({ highlights })}
             showHints
           />
+          <div>
+            <AchievementDialog
+              sourceText={item.summary || item.role || item.highlights.find((h) => h.trim()) || ''}
+              onInsert={(text) => update({ highlights: [...item.highlights, text] })}
+            />
+          </div>
           <TagInput
             label={t('technologies')}
             values={item.technologies ?? []}

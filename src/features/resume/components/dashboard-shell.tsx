@@ -1,7 +1,18 @@
 'use client';
 
 import * as React from 'react';
-import { Plus, Copy, Trash2, FileText, BarChart3, Eye } from 'lucide-react';
+import {
+  Plus,
+  Copy,
+  Trash2,
+  FileText,
+  BarChart3,
+  Eye,
+  Activity,
+  GitBranch,
+  TrendingUp,
+  Users,
+} from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
@@ -16,7 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { useRouter } from '@/i18n/navigation';
+import { Link, useRouter } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
 import { analyzeResume } from '@/features/scoring';
 import { useResumeStore } from '../store';
@@ -95,6 +106,7 @@ function ResumeCard({
 export function DashboardShell() {
   const mounted = useMounted();
   const t = useTranslations('dashboard');
+  const tNav = useTranslations('nav');
   const router = useRouter();
   const order = useResumeStore((s) => s.order);
   const resumes = useResumeStore((s) => s.resumes);
@@ -132,6 +144,33 @@ export function DashboardShell() {
         <Button onClick={createAndOpen}>
           <Plus className="size-4" />
           {t('new')}
+        </Button>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        <Button asChild variant="outline" size="sm">
+          <Link href="/health">
+            <Activity className="size-4" />
+            {tNav('health')}
+          </Link>
+        </Button>
+        <Button asChild variant="outline" size="sm">
+          <Link href="/versions">
+            <GitBranch className="size-4" />
+            {tNav('versions')}
+          </Link>
+        </Button>
+        <Button asChild variant="outline" size="sm">
+          <Link href="/progress">
+            <TrendingUp className="size-4" />
+            {tNav('progress')}
+          </Link>
+        </Button>
+        <Button asChild variant="outline" size="sm">
+          <Link href="/recruiter">
+            <Users className="size-4" />
+            {tNav('recruiter')}
+          </Link>
         </Button>
       </div>
 
