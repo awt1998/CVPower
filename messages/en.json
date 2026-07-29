@@ -236,6 +236,49 @@
       "custom": "Additional"
     }
   },
+  "analyze": {
+    "title": "Analyze & Match",
+    "subtitle": "Paste a job description to score your match and see exactly what to fix.",
+    "jobLabel": "Job description",
+    "jobPlaceholder": "Paste the full job description here…",
+    "jobHint": "Everything is analyzed on your device.",
+    "clear": "Clear",
+    "matchScore": "Match",
+    "baseScore": "Resume",
+    "scoreAria": "Overall score {score} out of 100",
+    "withJob": "Your resume scored against this job. Address the recommendations to raise it.",
+    "withoutJob": "Baseline resume quality. Paste a job description to score your match to it.",
+    "breakdown": "Score breakdown",
+    "requirements": "Job requirements",
+    "recommendations": "Recommendations",
+    "coverageSummary": "Matched {matched} of {total} requirements.",
+    "noReasons": "No issues found — your resume looks strong.",
+    "empty": "You don't have a resume yet.",
+    "goToBuilder": "Go to the builder",
+    "dimensions": {
+      "keywordCoverage": "Keyword coverage",
+      "skillsMatch": "Skills match",
+      "atsFriendliness": "ATS-friendliness",
+      "quantification": "Quantified impact",
+      "readability": "Readability",
+      "completeness": "Completeness"
+    },
+    "reasons": {
+      "atsName": "Add your full name.",
+      "atsEmail": "Add a valid email address.",
+      "atsPhone": "Add a phone number.",
+      "atsSummary": "Write a professional summary (40+ characters).",
+      "atsExperience": "Add at least one work experience entry.",
+      "atsDates": "Add start and end dates to every experience.",
+      "atsSkills": "Add a skills section with concrete skills.",
+      "atsBulletLength": "Shorten overly long bullet points.",
+      "addTerm": "Add \"{term}\" to your resume where relevant.",
+      "strengthenTerm": "Strengthen \"{term}\" — it's mentioned only weakly.",
+      "quantify": "Quantify more bullets with numbers or metrics.",
+      "addBullets": "Add achievement bullet points to your experience.",
+      "improveBullets": "Tighten bullet points to one clear idea each."
+    }
+  },
   "home": {
     "heroTitle": "The best free resume optimizer.",
     "heroSubtitle": "Match your resume to any job, fix what matters, and export an ATS-safe PDF — entirely in your browser. Nothing is ever uploaded.",

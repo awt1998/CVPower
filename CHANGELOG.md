@@ -30,6 +30,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added EN/AR translations for the whole builder, plus tests for field validation
   and the reorder utilities.
 
+### Scoring, Job Matching & ATS
+- Added the **matching** feature: a curated skills taxonomy (canonical + synonyms),
+  resume indexing, job-description requirement extraction, and matched/partial/missing
+  matching with weighted coverage. Current JD text persists on-device.
+- Added the **scoring** feature: an explainable 0–100 score from weighted sub-scores
+  (keyword coverage, skills match, ATS-friendliness, quantified impact, readability,
+  completeness) plus an ATS analyzer and ranked, localized recommendations.
+- Added the `/analyze` route: paste a job description to see the match score, a
+  breakdown, requirement chips (matched/partial/missing), and recommendations — all
+  computed in the browser, no external AI.
+- Added shared `lib/text.ts` (tokenizer, stopwords, stemmer, n-grams), EN/AR
+  translations, and unit tests for the taxonomy, matching, ATS, and scoring.
+
 ### Preview, Templates & PDF Export
 - Added the **templates** feature: a shared, ATS-safe, single-column
   `ResumeDocument` with two themes (**classic**, **modern**); template choice is
