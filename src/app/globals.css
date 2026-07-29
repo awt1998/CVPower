@@ -133,4 +133,16 @@
     border-radius: 0 !important;
     box-shadow: none !important;
   }
+
+  /* Keep sections and bullets from splitting awkwardly across pages. */
+  .resume-sheet section {
+    break-inside: avoid;
+  }
+  .resume-sheet li {
+    break-inside: avoid;
+  }
+  .resume-sheet h1,
+  .resume-sheet h2 {
+    break-after: avoid;
+  }
 }

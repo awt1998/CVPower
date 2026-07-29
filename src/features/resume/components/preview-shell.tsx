@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Link } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
-import { ResumePreview, TemplatePicker } from '@/features/templates';
+import { ResumePreview, TemplateCustomizer } from '@/features/templates';
 import { printResume } from '@/features/pdf';
 import { useResumeStore } from '../store';
 import { useActiveResume } from './hooks/use-active-resume';
@@ -46,6 +46,13 @@ export function PreviewShell() {
 
   return (
     <div className="grid gap-6">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `@media print{@page{size:${
+            (resume.meta.pageSize ?? 'a4') === 'letter' ? 'letter' : 'A4'
+          };margin:14mm}}`,
+        }}
+      />
       <div className="flex flex-wrap items-center justify-between gap-4 print:hidden">
         <Button asChild variant="outline" size="sm">
           <Link href="/builder">
@@ -53,16 +60,20 @@ export function PreviewShell() {
             {t('backToBuilder')}
           </Link>
         </Button>
-        <div className="flex flex-wrap items-center gap-3">
-          <TemplatePicker resume={resume} />
-          <Button size="sm" onClick={() => printResume(resume.meta.title)}>
-            <Printer className="size-4" />
-            {t('export')}
-          </Button>
-        </div>
+        <Button size="sm" onClick={() => printResume(resume.meta.title)}>
+          <Printer className="size-4" />
+          {t('export')}
+        </Button>
       </div>
 
-      <ResumePreview resume={resume} />
+      <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
+        <aside className="print:hidden">
+          <div className="rounded-xl border p-5">
+            <TemplateCustomizer resume={resume} />
+          </div>
+        </aside>
+        <ResumePreview resume={resume} />
+      </div>
     </div>
   );
 }

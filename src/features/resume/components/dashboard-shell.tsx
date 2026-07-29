@@ -127,6 +127,11 @@ export function DashboardShell() {
     openIn(id, '/builder');
   };
 
+  const loadExample = () => {
+    const id = useResumeStore.getState().loadSample();
+    openIn(id, '/builder');
+  };
+
   if (!mounted) {
     return (
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -141,10 +146,15 @@ export function DashboardShell() {
     <div className="grid gap-6">
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">{t('count', { count: list.length })}</p>
-        <Button onClick={createAndOpen}>
-          <Plus className="size-4" />
-          {t('new')}
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" onClick={loadExample}>
+            {t('loadSample')}
+          </Button>
+          <Button onClick={createAndOpen}>
+            <Plus className="size-4" />
+            {t('new')}
+          </Button>
+        </div>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -177,10 +187,15 @@ export function DashboardShell() {
       {list.length === 0 ? (
         <div className="rounded-lg border border-dashed p-12 text-center">
           <p className="text-muted-foreground">{t('empty')}</p>
-          <Button className="mt-4" onClick={createAndOpen}>
-            <Plus className="size-4" />
-            {t('new')}
-          </Button>
+          <div className="mt-4 flex flex-wrap justify-center gap-2">
+            <Button onClick={createAndOpen}>
+              <Plus className="size-4" />
+              {t('new')}
+            </Button>
+            <Button variant="outline" onClick={loadExample}>
+              {t('loadSample')}
+            </Button>
+          </div>
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

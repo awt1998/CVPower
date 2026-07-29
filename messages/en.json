@@ -230,7 +230,22 @@
     "present": "Present",
     "names": {
       "classic": "Classic",
-      "modern": "Modern"
+      "modern": "Modern",
+      "minimal": "Minimal"
+    },
+    "customize": {
+      "template": "Template",
+      "accent": "Accent color",
+      "density": "Density",
+      "comfortable": "Comfortable",
+      "compact": "Compact",
+      "header": "Header alignment",
+      "center": "Center",
+      "start": "Start",
+      "pageSize": "Page size",
+      "a4": "A4",
+      "letter": "Letter",
+      "sections": "Visible sections"
     },
     "sections": {
       "summary": "Summary",
@@ -278,6 +293,8 @@
     "addToResume": "Add \"{term}\" to your resume",
     "addHint": "Tip: click a missing skill to add it to your resume.",
     "addedGroupName": "Skills",
+    "tailor": "Tailor to job",
+    "tailored": "Added {count} missing skills to your resume",
     "noReasons": "No issues found — your resume looks strong.",
     "empty": "You don't have a resume yet.",
     "goToBuilder": "Go to the builder",
@@ -318,6 +335,7 @@
     "title": "Your resumes",
     "subtitle": "Create, open, analyze, and manage all your resumes in one place.",
     "new": "New resume",
+    "loadSample": "Load example",
     "count": "{count} resumes",
     "empty": "You don't have any resumes yet.",
     "untitled": "Untitled resume",

@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -86,6 +87,35 @@ export function AnalyzeShell() {
 
   const { score, match } = analysis;
 
+  const missingSkills = match
+    ? match.items
+        .filter((i) => i.requirement.kind === 'skill' && i.status !== 'matched')
+        .map((i) => i.requirement.label)
+    : [];
+
+  const tailor = () => {
+    if (!resume) return;
+    const store = useResumeStore.getState();
+    const current = store.getActiveResume() ?? resume;
+    const existing = new Set(
+      current.sections.skills.flatMap((g) => g.items.map((i) => i.toLowerCase())),
+    );
+    const toAdd = missingSkills.filter((s) => !existing.has(s.toLowerCase()));
+    if (toAdd.length === 0) return;
+
+    const first = current.sections.skills[0];
+    if (first) {
+      store.updateArrayItem(current.id, 'skills', first.id, { items: [...first.items, ...toAdd] });
+    } else {
+      store.addArrayItem(
+        current.id,
+        'skills',
+        createSkillGroup({ category: t('addedGroupName'), items: toAdd }),
+      );
+    }
+    toast.success(t('tailored', { count: toAdd.length }));
+  };
+
   return (
     <div className="grid gap-6">
       <AnalyzeIntro />
@@ -144,8 +174,13 @@ export function AnalyzeShell() {
 
         {match && (
           <Card>
-            <CardHeader>
+            <CardHeader className="flex-row items-center justify-between space-y-0">
               <CardTitle className="text-base">{t('requirements')}</CardTitle>
+              {missingSkills.length > 0 && (
+                <Button size="sm" variant="secondary" onClick={tailor}>
+                  {t('tailor')}
+                </Button>
+              )}
             </CardHeader>
             <CardContent>
               <RequirementList match={match} onAdd={addTerm} />

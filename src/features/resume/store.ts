@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { createJSONStorage, persist, type StateStorage } from 'zustand/middleware';
 
 import { AUTOSAVE_DEBOUNCE_MS, RESUME_SCHEMA_VERSION, RESUME_STORAGE_KEY } from './constants';
-import { createEmptyResumeData } from './factory';
+import { createEmptyResumeData, createSampleResume } from './factory';
 import { validateResumeData } from './schema';
 import { runMigrations } from './migrations';
 import { createDebouncedStorage, getSafeStorage } from './persistence';
@@ -85,6 +85,7 @@ export interface ResumeStoreActions {
 
   // Lifecycle
   reset: () => void;
+  loadSample: () => string;
   getActiveResume: () => Resume | null;
 }
 
@@ -173,6 +174,12 @@ export function createResumeStore(options: ResumeStoreOptions = {}) {
           set(importBackupData(dataOf(get()), input, mode)),
 
         reset: () => set(createEmptyResumeData()),
+        loadSample: () => {
+          const resume = createSampleResume();
+          const withResume = ops.addResume(dataOf(get()), resume);
+          set(ops.setActiveResume(withResume, resume.id));
+          return resume.id;
+        },
         getActiveResume: () => {
           const state = get();
           if (!state.activeResumeId) return null;

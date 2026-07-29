@@ -126,6 +126,77 @@ export function createLanguage(
   return { id: createId(), name: '', proficiency: 'professional', ...overrides };
 }
 
+/** A fully-populated example resume for first-time users to explore. */
+export function createSampleResume(): Resume {
+  const resume = createResume({ title: 'Example resume' });
+  resume.basics = {
+    fullName: 'Alex Morgan',
+    headline: 'Senior Product Designer',
+    email: 'alex.morgan@example.com',
+    phone: '+1 555 0100',
+    location: { city: 'Austin', country: 'USA' },
+    website: 'https://alexmorgan.design',
+    summary:
+      'Senior product designer with 8+ years crafting user-centered digital products. Led cross-functional teams to ship features that lifted engagement and revenue, blending research, systems thinking, and polished UI.',
+    links: [createLink({ label: 'LinkedIn', url: 'https://linkedin.com/in/alexmorgan' })],
+  };
+  resume.sections.experience = [
+    createExperience({
+      company: 'Northwind',
+      role: 'Senior Product Designer',
+      location: 'Austin, USA',
+      startDate: '2021-03',
+      current: true,
+      summary: 'Own the design of the core product experience.',
+      highlights: [
+        'Redesigned onboarding, increasing activation by 24% in one quarter',
+        'Built and maintained the design system used by 12 engineers',
+        'Ran usability testing that cut support tickets by 18%',
+      ],
+      technologies: ['Figma', 'React', 'Accessibility'],
+    }),
+    createExperience({
+      company: 'BrightApps',
+      role: 'Product Designer',
+      location: 'Remote',
+      startDate: '2018-06',
+      endDate: '2021-02',
+      current: false,
+      highlights: [
+        'Shipped a checkout redesign that raised conversion by 12%',
+        'Partnered with PMs to define and validate three major features',
+      ],
+    }),
+  ];
+  resume.sections.education = [
+    createEducation({
+      institution: 'University of Texas',
+      degree: 'B.A. Design',
+      field: 'Interaction Design',
+      startDate: '2012-09',
+      endDate: '2016-06',
+      current: false,
+    }),
+  ];
+  resume.sections.skills = [
+    createSkillGroup({ category: 'Design', items: ['UI/UX', 'Design Systems', 'Prototyping', 'User Research'] }),
+    createSkillGroup({ category: 'Tools', items: ['Figma', 'React', 'HTML', 'CSS'] }),
+  ];
+  resume.sections.projects = [
+    createProject({
+      name: 'Open Design Kit',
+      description: 'An open-source component library.',
+      url: 'https://github.com/example/kit',
+      highlights: ['1.2k GitHub stars', 'Used by 30+ teams'],
+    }),
+  ];
+  resume.sections.languages = [
+    createLanguage({ name: 'English', proficiency: 'native' }),
+    createLanguage({ name: 'Spanish', proficiency: 'professional' }),
+  ];
+  return resume;
+}
+
 export function createReference(
   overrides: Partial<Omit<ReferenceItem, 'id'>> = {},
 ): ReferenceItem {

@@ -150,6 +150,11 @@ export const resumeMetaSchema = z.object({
   templateId: z.string().max(80).optional(),
   locale: z.string().max(10).optional(),
   lastUsedAt: z.string().optional(),
+  accent: z.enum(['slate', 'indigo', 'emerald', 'rose', 'amber', 'sky']).optional(),
+  density: z.enum(['comfortable', 'compact']).optional(),
+  headerAlign: z.enum(['center', 'start']).optional(),
+  hiddenSections: z.array(z.string()).optional(),
+  pageSize: z.enum(['a4', 'letter']).optional(),
 });
 
 export const resumeSchema = z.object({
