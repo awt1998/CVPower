@@ -5,20 +5,24 @@ Built milestone by milestone. Each milestone is shippable, independently valuabl
 ## ✅ Milestone 1 — Foundation & Design System
 Project init (Next.js 15, React 19, TS), full folder structure, design tokens (light/dark), shadcn/ui component library, brand + layout shell, `next-intl` EN/AR + RTL wiring, theming, repo hygiene (CI, issue/PR templates), and planning docs. **No feature logic.**
 
-## Milestone 2 — Resume Data Model & Builder
+## ✅ Milestone 2 — Resume Data Model & Builder
 Canonical `Resume` types, Zustand stores + LocalStorage persistence (schema versioning + migrations + wipe), the structured resume editor (React Hook Form + Zod) with all sections, live preview, and multiple profiles. Client-side import (PDF via pdf.js, DOCX via mammoth) with a manual-correction fallback.
 
-## Milestone 3 — Scoring Engine & ATS Analyzer
+## ✅ Milestone 3 — Scoring Engine & ATS Analyzer
 Skills taxonomy v1, the pure scoring engine with weighted sub-scores and explainable reasons, the ATS analyzer, and the analysis UI (score ring, sub-score breakdown). Web Worker for heavy compute. High unit-test coverage.
 
-## Milestone 4 — Job Matching & Recommendations
+## ✅ Milestone 4 — Job Matching & Recommendations
 JD input + requirement extraction, the matching engine (matched/partial/missing), the keyword-gap explorer, and ranked actionable recommendations with estimated impact and one-click insert. Re-score loop.
 
-## Milestone 5 — Templates & PDF Export
+## ✅ Milestone 5 — Templates & PDF Export
 ATS-safe premium templates behind a common interface, the PDF export engine (selectable text, embedded fonts, RTL), export dialog, and print support. Arabic export tests.
 
-## Milestone 6 — Polish, Should-Haves & Launch
-Bullet improver (rule-based), readability/length analysis, diff view, cover-letter assist, JSON backup import/export, full a11y + i18n audit, performance budget verification, docs site, and public GitHub + Vercel launch.
+## Milestone 6 — Polish, Should-Haves & Launch (in progress)
+Done: bullet improver (rule-based), one-click skill insert, resumes dashboard,
+cover-letter assist, JSON backup import/export, richer landing page, SEO
+(metadata/OG, robots, sitemap), and a skip-to-content link. Remaining: diff view,
+keyword-gap explorer, readability panel, full performance budget verification, and
+final launch prep. Already public on GitHub and deployed on Vercel.
 
 ## Deployment strategy
 - **Host:** Vercel. No environment secrets (the app has none).

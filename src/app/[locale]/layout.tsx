@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale, getMessages } from 'next-intl/server';
+import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server';
 
 import { routing, getDirection, isValidLocale } from '@/i18n/routing';
 import { Providers } from '@/components/providers';
@@ -37,6 +37,19 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.author }],
   metadataBase: new URL(siteConfig.url),
   icons: { icon: '/favicon.svg' },
+  openGraph: {
+    title: `${siteConfig.name} — ${siteConfig.shortDescription}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${siteConfig.name} — ${siteConfig.shortDescription}`,
+    description: siteConfig.description,
+  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -68,6 +81,7 @@ export default async function LocaleLayout({
 
   // Load messages on the server and hand them to the client provider.
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: 'common' });
 
   return (
     <html
@@ -79,9 +93,17 @@ export default async function LocaleLayout({
       <body className="min-h-dvh font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:start-2 focus:top-2 focus:z-50 focus:rounded-md focus:bg-background focus:px-3 focus:py-2 focus:text-sm focus:ring-2 focus:ring-ring"
+            >
+              {t('skipToContent')}
+            </a>
             <div className="relative flex min-h-dvh flex-col">
               <SiteHeader />
-              <main className="flex-1">{children}</main>
+              <main id="main-content" className="flex-1">
+                {children}
+              </main>
               <SiteFooter />
             </div>
           </Providers>

@@ -67,9 +67,19 @@ messages/              # en.json, ar.json
 docs/                  # planning documentation
 ```
 
+## Features
+
+- **Dashboard** (`/dashboard`) — manage all your resumes with a quality score at a glance.
+- **Builder** (`/builder`) — a fast, guided, multi-section editor with autosave, JSON backup, and inline bullet hints.
+- **Analyze** (`/analyze`) — paste a job description for a transparent match score, gaps, and ranked recommendations; add missing skills in one click.
+- **Preview & export** (`/preview`) — ATS-safe templates and a real-text PDF export.
+- **Cover letter** (`/cover-letter`) — a guided, job-aware cover letter with a checklist and PDF export.
+
+All of it runs in your browser, in English and Arabic (RTL), with your data stored only on your device.
+
 ## Roadmap
 
-CVPower is built milestone by milestone. See [docs/roadmap.md](docs/roadmap.md). **Milestone 1 (Foundation & Design System)** is complete; feature work follows.
+CVPower is built milestone by milestone. See [docs/roadmap.md](docs/roadmap.md). The foundation, resume engine, builder, scoring/matching/ATS, templates/PDF, dashboard, and cover-letter milestones are complete; remaining work is polish and launch.
 
 ## Contributing
 

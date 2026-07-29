@@ -8,7 +8,8 @@
     "confirm": "Confirm",
     "save": "Save",
     "delete": "Delete",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "skipToContent": "Skip to content"
   },
   "nav": {
     "home": "Home",
@@ -358,15 +359,59 @@
   },
   "home": {
     "heroTitle": "The best free resume optimizer.",
-    "heroSubtitle": "Match your resume to any job, fix what matters, and export an ATS-safe PDF — entirely in your browser. Nothing is ever uploaded.",
-    "ctaPrimary": "Optimize my resume",
-    "ctaSecondary": "See how it works",
-    "featurePrivacyTitle": "Private by design",
-    "featurePrivacyBody": "No accounts, no servers, no tracking. Your data stays on your device.",
-    "featureScoreTitle": "Transparent scoring",
-    "featureScoreBody": "See exactly why you match — and precisely what to fix, ranked by impact.",
-    "featureAtsTitle": "ATS-safe exports",
-    "featureAtsBody": "Beautiful, parseable resumes that get past the filters and reach a human."
+    "heroSubtitle": "Build your resume, match it to any job, fix what matters, and export an ATS-safe PDF — entirely in your browser. Nothing is ever uploaded.",
+    "ctaPrimary": "Get started",
+    "ctaSecondary": "Analyze my resume",
+    "featuresTitle": "Everything you need to get the interview",
+    "featuresSubtitle": "A complete, private toolkit — free forever, running entirely on your device.",
+    "features": {
+      "privacy": {
+        "title": "Private by design",
+        "body": "No accounts, no servers, no tracking. Your data stays on your device."
+      },
+      "scoring": {
+        "title": "Transparent scoring",
+        "body": "A clear 0–100 score with a breakdown of exactly why you match."
+      },
+      "ats": {
+        "title": "ATS-safe export",
+        "body": "Clean, parseable PDFs with real text that get past the filters."
+      },
+      "matching": {
+        "title": "Job matching",
+        "body": "Paste a job description to see matched, partial, and missing requirements."
+      },
+      "bullets": {
+        "title": "Smart bullet hints",
+        "body": "On-device tips to make achievements strong, active, and quantified."
+      },
+      "cover": {
+        "title": "Cover letter assist",
+        "body": "A guided, job-aware cover letter with a quality checklist."
+      }
+    },
+    "howTitle": "How it works",
+    "steps": {
+      "build": {
+        "title": "Build",
+        "body": "Add your details in a fast, guided editor. Everything autosaves locally."
+      },
+      "analyze": {
+        "title": "Analyze",
+        "body": "Paste the job description and get your match score and gaps."
+      },
+      "improve": {
+        "title": "Improve",
+        "body": "Apply ranked recommendations and add missing skills in one click."
+      },
+      "export": {
+        "title": "Export",
+        "body": "Download an ATS-safe PDF and a matching cover letter."
+      }
+    },
+    "ctaTitle": "Land more interviews — for free.",
+    "ctaBody": "No sign-up. No uploads. Just a better resume, on your device.",
+    "ctaButton": "Start now"
   },
   "footer": {
     "builtWith": "Free and open-source. Built for job seekers.",
