@@ -11,6 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Link } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
 import { useResumeStore } from '@/features/resume/store';
+import { createSkillGroup } from '@/features/resume/factory';
 import { ResumeSelect } from '@/features/resume/components/parts/resume-select';
 import { analyzeResume } from '@/features/scoring';
 import { useJobStore } from '@/features/matching/store';
@@ -42,6 +43,30 @@ export function AnalyzeShell() {
   const analysis = React.useMemo(
     () => (resume ? analyzeResume(resume, jobText) : null),
     [resume, jobText],
+  );
+
+  const addTerm = React.useCallback(
+    (term: string) => {
+      if (!resume) return;
+      const groups = resume.sections.skills;
+      const exists = groups.some((g) =>
+        g.items.some((i) => i.toLowerCase() === term.toLowerCase()),
+      );
+      if (exists) return;
+
+      const store = useResumeStore.getState();
+      const first = groups[0];
+      if (first) {
+        store.updateArrayItem(resume.id, 'skills', first.id, { items: [...first.items, term] });
+      } else {
+        store.addArrayItem(
+          resume.id,
+          'skills',
+          createSkillGroup({ category: t('addedGroupName'), items: [term] }),
+        );
+      }
+    },
+    [resume, t],
   );
 
   if (!mounted) {
@@ -123,7 +148,7 @@ export function AnalyzeShell() {
               <CardTitle className="text-base">{t('requirements')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <RequirementList match={match} />
+              <RequirementList match={match} onAdd={addTerm} />
             </CardContent>
           </Card>
         )}

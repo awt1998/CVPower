@@ -58,6 +58,7 @@ export function ExperienceStep({ resume }: { resume: Resume }) {
             addLabel={t('addHighlight')}
             placeholder={t('highlightPlaceholder')}
             onChange={(highlights) => update({ highlights })}
+            showHints
           />
           <TagInput
             label={t('technologies')}

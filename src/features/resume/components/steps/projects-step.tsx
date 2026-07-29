@@ -46,6 +46,7 @@ export function ProjectsStep({ resume }: { resume: Resume }) {
               values={item.highlights}
               addLabel={t('addHighlight')}
               onChange={(highlights) => update({ highlights })}
+              showHints
             />
             <TagInput
               label={t('technologies')}

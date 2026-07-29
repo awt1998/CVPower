@@ -12,8 +12,11 @@
   },
   "nav": {
     "home": "Home",
+    "dashboard": "Dashboard",
     "builder": "Builder",
     "analyze": "Analyze",
+    "preview": "Preview",
+    "cover": "Cover Letter",
     "templates": "Templates",
     "docs": "Docs",
     "github": "GitHub"
@@ -267,6 +270,9 @@
     "requirements": "Job requirements",
     "recommendations": "Recommendations",
     "coverageSummary": "Matched {matched} of {total} requirements.",
+    "addToResume": "Add \"{term}\" to your resume",
+    "addHint": "Tip: click a missing skill to add it to your resume.",
+    "addedGroupName": "Skills",
     "noReasons": "No issues found — your resume looks strong.",
     "empty": "You don't have a resume yet.",
     "goToBuilder": "Go to the builder",
@@ -293,6 +299,62 @@
       "addBullets": "Add achievement bullet points to your experience.",
       "improveBullets": "Tighten bullet points to one clear idea each."
     }
+  },
+  "ai": {
+    "bullet": {
+      "weakOpener": "Start with a strong action verb",
+      "noMetric": "Add a number or metric",
+      "passive": "Use active voice",
+      "tooLong": "Shorten this line",
+      "tooShort": "Add more detail"
+    }
+  },
+  "dashboard": {
+    "title": "Your resumes",
+    "subtitle": "Create, open, analyze, and manage all your resumes in one place.",
+    "new": "New resume",
+    "count": "{count} resumes",
+    "empty": "You don't have any resumes yet.",
+    "untitled": "Untitled resume",
+    "open": "Open",
+    "analyze": "Analyze",
+    "preview": "Preview",
+    "duplicate": "Duplicate",
+    "delete": "Delete",
+    "updated": "Updated {date}",
+    "scoreLabel": "Resume quality score",
+    "confirmTitle": "Delete this resume?",
+    "confirmBody": "\"{title}\" will be permanently removed from this device. This cannot be undone.",
+    "cancel": "Cancel"
+  },
+  "cover": {
+    "title": "Cover Letter",
+    "subtitle": "Write a focused cover letter, guided by a checklist tuned to the job.",
+    "senderName": "Your name",
+    "recipientName": "Hiring manager",
+    "greetingPrefix": "Dear",
+    "greetingFallback": "Hiring Manager",
+    "company": "Company",
+    "role": "Role",
+    "intro": "Opening",
+    "introHint": "One or two lines: the role you want and why you're a fit.",
+    "body": "Body",
+    "bodyHint": "1–2 short paragraphs with a concrete, measurable achievement.",
+    "closing": "Closing",
+    "checklistTitle": "Checklist",
+    "checks": {
+      "company": "Mentions the company by name",
+      "role": "Names the role you're applying for",
+      "keywords": "References at least 2 skills from the job",
+      "metric": "Includes a measurable achievement",
+      "length": "A focused length (about 80–350 words)"
+    },
+    "copy": "Copy",
+    "copied": "Cover letter copied",
+    "copyFailed": "Could not copy",
+    "export": "Export PDF",
+    "printTitle": "Cover Letter",
+    "emptyPreview": "Your cover letter preview will appear here."
   },
   "home": {
     "heroTitle": "The best free resume optimizer.",

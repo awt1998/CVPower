@@ -14,9 +14,10 @@ export function SiteHeader() {
   const t = useTranslations('nav');
 
   const links = [
+    { href: '/dashboard', label: t('dashboard') },
     { href: '/builder', label: t('builder') },
     { href: '/analyze', label: t('analyze') },
-    { href: '/templates', label: t('templates') },
+    { href: '/cover-letter', label: t('cover') },
   ] as const;
 
   return (
