@@ -373,6 +373,10 @@
     "education": "Education",
     "empty": "Add resume details to see your live ATS score."
   },
+  "livePreview": {
+    "title": "Live preview",
+    "empty": "Start filling your resume to see it here."
+  },
   "achievement": {
     "improve": "Improve achievement",
     "title": "Stronger achievements",
