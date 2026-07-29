@@ -1,12 +1,13 @@
 'use client';
 
 import * as React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Eye } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Link } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
 import { useResumeStore } from '../store';
 import { useActiveResume } from './hooks/use-active-resume';
@@ -81,7 +82,15 @@ export function BuilderShell() {
       <section className="grid content-start gap-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <h2 className="text-xl font-semibold tracking-tight">{t(`steps.${currentStep.id}`)}</h2>
-          <AutosaveIndicator updatedAt={resume.meta.updatedAt} />
+          <div className="flex items-center gap-3">
+            <AutosaveIndicator updatedAt={resume.meta.updatedAt} />
+            <Button asChild variant="outline" size="sm">
+              <Link href="/preview">
+                <Eye className="size-4" />
+                {t('preview')}
+              </Link>
+            </Button>
+          </div>
         </div>
 
         <StepComponent resume={resume} />

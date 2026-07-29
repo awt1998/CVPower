@@ -109,3 +109,28 @@
     text-wrap: balance;
   }
 }
+
+/*
+ * Print pipeline for PDF export. Only the resume sheet prints; all app chrome is
+ * hidden (via Tailwind's `print:hidden` on headers/footers/toolbars). The sheet
+ * drops its screen decoration so it fills the page as a clean document.
+ */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  .resume-sheet {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}

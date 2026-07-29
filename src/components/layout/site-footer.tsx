@@ -9,7 +9,7 @@ export function SiteFooter() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="border-t py-10">
+    <footer className="border-t py-10 print:hidden">
       <Container className="flex flex-col items-center justify-between gap-6 md:flex-row">
         <div className="flex flex-col items-center gap-2 md:items-start">
           <Logo />
