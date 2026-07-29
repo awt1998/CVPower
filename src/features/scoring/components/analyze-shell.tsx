@@ -11,6 +11,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Link } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
 import { useResumeStore } from '@/features/resume/store';
+import { ResumeSelect } from '@/features/resume/components/parts/resume-select';
 import { analyzeResume } from '@/features/scoring';
 import { useJobStore } from '@/features/matching/store';
 import { ScoreRing } from './score-ring';
@@ -60,7 +61,12 @@ export function AnalyzeShell() {
   const { score, match } = analysis;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_1.25fr]">
+    <div className="grid gap-6">
+      <div className="max-w-sm">
+        <ResumeSelect />
+      </div>
+
+      <div className="grid gap-8 lg:grid-cols-[1fr_1.25fr]">
       <div className="grid content-start gap-2">
         <Label htmlFor="job-description">{t('jobLabel')}</Label>
         <Textarea
@@ -127,6 +133,7 @@ export function AnalyzeShell() {
             <RecommendationList reasons={score.reasons} />
           </CardContent>
         </Card>
+      </div>
       </div>
     </div>
   );

@@ -239,6 +239,14 @@
   "analyze": {
     "title": "Analyze & Match",
     "subtitle": "Paste a job description to score your match and see exactly what to fix.",
+    "help": {
+      "title": "How this helps you get hired",
+      "body": "Applicant tracking systems (ATS) filter most resumes before a human sees them. Paste the job description and CVPower shows how well your resume matches — and exactly what to change to pass the filter and reach the interview.",
+      "point1": "Match score — your fit for this specific job, from 0 to 100.",
+      "point2": "Gaps — the required skills and keywords you're missing.",
+      "point3": "Recommendations — concrete, ranked fixes that raise your score.",
+      "privacy": "Everything runs on your device — nothing is uploaded."
+    },
     "jobLabel": "Job description",
     "jobPlaceholder": "Paste the full job description here…",
     "jobHint": "Everything is analyzed on your device.",
