@@ -63,7 +63,7 @@ export function CoverLetterShell() {
 
   return (
     <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
-      <div className="grid content-start gap-4">
+      <div className="grid content-start gap-4 print:hidden">
         <div className="grid gap-4 sm:grid-cols-2">
           <TextField label={t('senderName')} value={cl.senderName} onChange={(v) => cl.setField('senderName', v)} />
           <TextField label={t('recipientName')} value={cl.recipientName} onChange={(v) => cl.setField('recipientName', v)} placeholder={t('greetingFallback')} />

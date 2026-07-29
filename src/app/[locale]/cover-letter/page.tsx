@@ -25,7 +25,7 @@ export default async function CoverLetterPage({
 
   return (
     <Container className="py-10">
-      <div className="mb-8">
+      <div className="mb-8 print:hidden">
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{t('title')}</h1>
         <p className="mt-1 text-muted-foreground">{t('subtitle')}</p>
       </div>

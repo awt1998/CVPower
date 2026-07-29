@@ -30,6 +30,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added EN/AR translations for the whole builder, plus tests for field validation
   and the reorder utilities.
 
+### Actioning, Dashboard, Bullet Hints & Cover Letter
+- **One-click insert:** missing skill chips on `/analyze` are now buttons that add
+  the skill straight to the resume; the score updates live.
+- **Bullet improver** (`features/ai`): rule-based, on-device hints (weak opener,
+  missing metric, passive voice, length) shown inline under experience & project
+  achievements. No external LLM.
+- **Dashboard** (`/dashboard`): a hub listing every resume with a quality score and
+  open / analyze / preview / duplicate / delete actions; now the primary nav entry.
+- **Cover letter assist** (`/cover-letter`): a structured, guided editor with a
+  JD-aware checklist, live preview, copy, and ATS-safe PDF export — not generative.
+- Added EN/AR translations and unit tests for the bullet and cover-letter engines.
+
 ### Scoring, Job Matching & ATS
 - Added the **matching** feature: a curated skills taxonomy (canonical + synonyms),
   resume indexing, job-description requirement extraction, and matched/partial/missing
