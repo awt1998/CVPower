@@ -235,7 +235,8 @@
     "names": {
       "classic": "Classic",
       "modern": "Modern",
-      "minimal": "Minimal"
+      "minimal": "Minimal",
+      "elegant": "Elegant"
     },
     "customize": {
       "template": "Template",
@@ -560,6 +561,11 @@
     "privacy": "Privacy",
     "docs": "Docs",
     "license": "MIT License"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "body": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
   },
   "notFound": {
     "title": "Page not found",

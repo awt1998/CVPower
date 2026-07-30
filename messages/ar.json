@@ -235,7 +235,8 @@
     "names": {
       "classic": "كلاسيكي",
       "modern": "حديث",
-      "minimal": "بسيط"
+      "minimal": "بسيط",
+      "elegant": "أنيق"
     },
     "customize": {
       "template": "القالب",
@@ -560,6 +561,11 @@
     "privacy": "الخصوصية",
     "docs": "التوثيق",
     "license": "رخصة MIT"
+  },
+  "error": {
+    "title": "حدث خطأ ما",
+    "body": "حدث خطأ غير متوقع. حاول مرة أخرى.",
+    "retry": "إعادة المحاولة"
   },
   "notFound": {
     "title": "الصفحة غير موجودة",
