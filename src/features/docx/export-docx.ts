@@ -1,4 +1,9 @@
-import { formatDateRange, formatResumeDate, formatLocation, joinParts } from '@/features/templates';
+import {
+  formatDateRange,
+  formatResumeDate,
+  formatLocation,
+  joinParts,
+} from '@/features/templates/template-utils';
 import type { Resume } from '@/features/resume/types';
 
 export interface DocxOptions {

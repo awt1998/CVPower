@@ -62,7 +62,8 @@
     "common": {
       "moveUp": "Move up",
       "moveDown": "Move down",
-      "remove": "Remove"
+      "remove": "Remove",
+      "reorder": "Drag to reorder"
     },
     "autosave": {
       "saved": "Saved on your device",
@@ -221,6 +222,9 @@
     "subtitle": "See your resume as employers will, then export an ATS-safe PDF.",
     "backToBuilder": "Back to editor",
     "export": "Export PDF",
+    "exportDocx": "Export DOCX",
+    "docxDone": "Word document downloaded",
+    "docxFailed": "Could not export DOCX",
     "empty": "You don't have a resume yet.",
     "goToBuilder": "Go to the builder"
   },

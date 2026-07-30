@@ -10,6 +10,7 @@ import { Link } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
 import { ResumePreview, TemplateCustomizer } from '@/features/templates';
 import { printResume } from '@/features/pdf';
+import { DocxExportButton } from '@/features/docx';
 import { useResumeStore } from '../store';
 import { useActiveResume } from './hooks/use-active-resume';
 
@@ -60,10 +61,13 @@ export function PreviewShell() {
             {t('backToBuilder')}
           </Link>
         </Button>
-        <Button size="sm" onClick={() => printResume(resume.meta.title)}>
-          <Printer className="size-4" />
-          {t('export')}
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <DocxExportButton resume={resume} />
+          <Button size="sm" onClick={() => printResume(resume.meta.title)}>
+            <Printer className="size-4" />
+            {t('export')}
+          </Button>
+        </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
