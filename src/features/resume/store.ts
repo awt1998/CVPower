@@ -86,6 +86,7 @@ export interface ResumeStoreActions {
   // Lifecycle
   reset: () => void;
   loadSample: () => string;
+  addResume: (resume: Resume) => string;
   getActiveResume: () => Resume | null;
 }
 
@@ -176,6 +177,11 @@ export function createResumeStore(options: ResumeStoreOptions = {}) {
         reset: () => set(createEmptyResumeData()),
         loadSample: () => {
           const resume = createSampleResume();
+          const withResume = ops.addResume(dataOf(get()), resume);
+          set(ops.setActiveResume(withResume, resume.id));
+          return resume.id;
+        },
+        addResume: (resume) => {
           const withResume = ops.addResume(dataOf(get()), resume);
           set(ops.setActiveResume(withResume, resume.id));
           return resume.id;

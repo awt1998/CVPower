@@ -30,6 +30,7 @@ import {
 import { Link, useRouter } from '@/i18n/navigation';
 import { useMounted } from '@/hooks/use-mounted';
 import { analyzeResume } from '@/features/scoring';
+import { ImportButton } from '@/features/import';
 import { useResumeStore } from '../store';
 import type { Resume } from '../types';
 
@@ -146,7 +147,8 @@ export function DashboardShell() {
     <div className="grid gap-6">
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">{t('count', { count: list.length })}</p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
+          <ImportButton />
           <Button variant="outline" onClick={loadExample}>
             {t('loadSample')}
           </Button>
@@ -192,6 +194,7 @@ export function DashboardShell() {
               <Plus className="size-4" />
               {t('new')}
             </Button>
+            <ImportButton />
             <Button variant="outline" onClick={loadExample}>
               {t('loadSample')}
             </Button>

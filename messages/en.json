@@ -489,6 +489,12 @@
     "onlyOther": "Only in the compared version",
     "none": "None"
   },
+  "import": {
+    "cta": "Import resume",
+    "loading": "Importing…",
+    "done": "Resume imported — review and refine it",
+    "failed": "Could not read that file"
+  },
   "home": {
     "heroTitle": "The best free resume optimizer.",
     "heroSubtitle": "Build your resume, match it to any job, fix what matters, and export an ATS-safe PDF — entirely in your browser. Nothing is ever uploaded.",
