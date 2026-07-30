@@ -22,9 +22,9 @@ export interface SkillEntry {
 
 export const SKILLS: SkillEntry[] = [
   // Languages
-  { canonical: 'JavaScript', category: 'language', aliases: ['javascript', 'js'] },
-  { canonical: 'TypeScript', category: 'language', aliases: ['typescript', 'ts'] },
-  { canonical: 'Python', category: 'language', aliases: ['python'] },
+  { canonical: 'JavaScript', category: 'language', aliases: ['javascript', 'js', 'جافاسكريبت'] },
+  { canonical: 'TypeScript', category: 'language', aliases: ['typescript', 'ts', 'تايبسكريبت'] },
+  { canonical: 'Python', category: 'language', aliases: ['python', 'بايثون'] },
   { canonical: 'Java', category: 'language', aliases: ['java'] },
   { canonical: 'C#', category: 'language', aliases: ['c#', 'csharp', 'c sharp'] },
   { canonical: 'C++', category: 'language', aliases: ['c++', 'cpp'] },
@@ -40,7 +40,7 @@ export const SKILLS: SkillEntry[] = [
   { canonical: 'Bash', category: 'language', aliases: ['bash', 'shell scripting'] },
 
   // Frameworks / libraries
-  { canonical: 'React', category: 'framework', aliases: ['react', 'react.js', 'reactjs'] },
+  { canonical: 'React', category: 'framework', aliases: ['react', 'react.js', 'reactjs', 'رياكت'] },
   { canonical: 'Next.js', category: 'framework', aliases: ['next.js', 'nextjs', 'next js'] },
   { canonical: 'Vue', category: 'framework', aliases: ['vue', 'vue.js', 'vuejs'] },
   { canonical: 'Angular', category: 'framework', aliases: ['angular', 'angularjs'] },
@@ -95,18 +95,18 @@ export const SKILLS: SkillEntry[] = [
   { canonical: 'Agile', category: 'concept', aliases: ['agile', 'scrum', 'kanban'] },
   { canonical: 'Testing', category: 'concept', aliases: ['unit testing', 'testing', 'tdd', 'test driven'] },
   { canonical: 'Machine Learning', category: 'concept', aliases: ['machine learning', 'ml', 'deep learning'] },
-  { canonical: 'Data Analysis', category: 'concept', aliases: ['data analysis', 'data analytics'] },
+  { canonical: 'Data Analysis', category: 'concept', aliases: ['data analysis', 'data analytics', 'تحليل البيانات'] },
   { canonical: 'CI', category: 'concept', aliases: ['continuous integration'] },
   { canonical: 'Accessibility', category: 'concept', aliases: ['accessibility', 'a11y', 'wcag'] },
   { canonical: 'SEO', category: 'concept', aliases: ['seo', 'search engine optimization'] },
   { canonical: 'UI/UX', category: 'concept', aliases: ['ui/ux', 'ux', 'user experience', 'ui design'] },
-  { canonical: 'Project Management', category: 'concept', aliases: ['project management', 'project manager'] },
+  { canonical: 'Project Management', category: 'concept', aliases: ['project management', 'project manager', 'إدارة المشاريع', 'إدارة مشاريع'] },
 
   // Soft skills
-  { canonical: 'Communication', category: 'soft', aliases: ['communication', 'communicate'] },
-  { canonical: 'Leadership', category: 'soft', aliases: ['leadership', 'lead', 'leading'] },
-  { canonical: 'Collaboration', category: 'soft', aliases: ['collaboration', 'collaborate', 'teamwork', 'cross-functional'] },
-  { canonical: 'Problem Solving', category: 'soft', aliases: ['problem solving', 'problem-solving'] },
+  { canonical: 'Communication', category: 'soft', aliases: ['communication', 'communicate', 'تواصل', 'التواصل'] },
+  { canonical: 'Leadership', category: 'soft', aliases: ['leadership', 'lead', 'leading', 'قيادة', 'القيادة'] },
+  { canonical: 'Collaboration', category: 'soft', aliases: ['collaboration', 'collaborate', 'teamwork', 'cross-functional', 'التعاون', 'العمل الجماعي', 'عمل جماعي'] },
+  { canonical: 'Problem Solving', category: 'soft', aliases: ['problem solving', 'problem-solving', 'حل المشكلات', 'حل المشاكل'] },
   { canonical: 'Mentoring', category: 'soft', aliases: ['mentoring', 'mentorship', 'coaching'] },
   { canonical: 'Attention to Detail', category: 'soft', aliases: ['attention to detail', 'detail-oriented'] },
 ];

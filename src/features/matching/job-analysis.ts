@@ -2,7 +2,20 @@ import { normalizeText, tokenize, removeStopwords, countBy, ngrams } from '@/lib
 import { extractSkills } from './taxonomy';
 import type { JobAnalysis, JobRequirement } from './types';
 
-const PREFERRED_CUES = ['nice to have', 'preferred', 'a plus', 'plus', 'bonus', 'ideally', 'optional'];
+const PREFERRED_CUES = [
+  'nice to have',
+  'preferred',
+  'a plus',
+  'plus',
+  'bonus',
+  'ideally',
+  'optional',
+  'يفضل',
+  'يُفضّل',
+  'ميزة إضافية',
+  'نقطة إضافية',
+  'اختياري',
+];
 const MAX_KEYWORDS = 12;
 
 /**
@@ -17,7 +30,7 @@ export function analyzeJob(jobText: string): JobAnalysis {
 
   // Skills that appear in a clause marked as preferred/optional.
   const clauses = jobText
-    .split(/[\n••;.|]/)
+    .split(/[\n••;.|،؛]/)
     .map((clause) => normalizeText(clause))
     .filter(Boolean);
   const preferred = new Set<string>();

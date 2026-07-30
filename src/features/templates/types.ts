@@ -1,7 +1,7 @@
 import type { Resume } from '@/features/resume/types';
 
 /** Available resume templates. Add an id here and a theme in `registry.ts`. */
-export type TemplateId = 'classic' | 'modern' | 'minimal';
+export type TemplateId = 'classic' | 'modern' | 'minimal' | 'elegant';
 
 /** Accent colors a user can pick, independent of the template. */
 export type AccentKey = 'slate' | 'indigo' | 'emerald' | 'rose' | 'amber' | 'sky';

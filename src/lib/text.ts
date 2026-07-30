@@ -35,6 +35,11 @@ export const STOPWORDS = new Set<string>([
   'working', 'role', 'team', 'teams', 'help', 'using', 'use', 'used', 'strong', 'good', 'great',
   'plus', 'years', 'year', 'experience', 'experienced', 'skills', 'skill', 'ability', 'looking',
   'join', 'candidate', 'candidates', 'ideal', 'you\'ll', 'we\'re', 'you\'re',
+  // Arabic stopwords
+  'و', 'في', 'من', 'على', 'إلى', 'عن', 'مع', 'أو', 'ثم', 'التي', 'الذي', 'هذا',
+  'هذه', 'ذلك', 'كان', 'هو', 'هي', 'ما', 'لا', 'أن', 'إن', 'قد', 'كل', 'بعض',
+  'عند', 'حتى', 'أي', 'به', 'له', 'لها', 'هم', 'نحن', 'أنت', 'بعد', 'قبل', 'كما',
+  'خبرة', 'سنوات', 'مهارات', 'العمل', 'فريق', 'ذات', 'لدى', 'يجب', 'مطلوب',
 ]);
 
 /** Drop stopwords and 1-character tokens. */

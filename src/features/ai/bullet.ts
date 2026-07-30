@@ -30,6 +30,14 @@ const WEAK_OPENERS = [
   'duties included',
   'in charge of',
   'responsible',
+  // Arabic weak openers
+  'مسؤول عن',
+  'عملت على',
+  'ساعدت',
+  'شاركت في',
+  'قمت بـ',
+  'مكلف بـ',
+  'كنت مسؤولا عن',
 ];
 
 /** Filler first words that weaken a bullet. */

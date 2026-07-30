@@ -15,7 +15,7 @@ export const DEFAULT_HEADER_ALIGN: HeaderAlign = 'center';
 export const DEFAULT_PAGE_SIZE: PageSize = 'a4';
 
 /** Ordered list of selectable template ids. */
-export const TEMPLATE_IDS: TemplateId[] = ['classic', 'modern', 'minimal'];
+export const TEMPLATE_IDS: TemplateId[] = ['classic', 'modern', 'minimal', 'elegant'];
 
 /**
  * Template themes. All are single-column and ATS-safe by construction; they differ
@@ -46,6 +46,14 @@ export const TEMPLATE_THEMES: Record<TemplateId, TemplateTheme> = {
     headingWeightClass: 'font-semibold',
     headingBorderClass: '',
     defaultAccent: 'slate',
+  },
+  elegant: {
+    id: 'elegant',
+    fontClass: 'font-serif',
+    nameSizeClass: 'text-4xl',
+    headingWeightClass: 'font-normal',
+    headingBorderClass: 'border-b',
+    defaultAccent: 'emerald',
   },
 };
 
