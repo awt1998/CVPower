@@ -77,7 +77,10 @@ export function stem(word: string): string {
  */
 export function containsTerm(haystack: string, term: string): boolean {
   if (!term) return false;
-  const pattern = new RegExp(`(^|[^\\p{L}\\p{N}+#.])${escapeRegExp(term)}(?=$|[^\\p{L}\\p{N}+#.])`, 'u');
+  // Boundaries are any non-alphanumeric char, so a trailing "." (e.g. "Postgres.")
+  // still counts as a word boundary. Symbols inside a term (c++, node.js, .net) are
+  // matched literally within the term itself, so they don't need to be word chars.
+  const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(term)}(?=$|[^\\p{L}\\p{N}])`, 'u');
   return pattern.test(haystack);
 }
 

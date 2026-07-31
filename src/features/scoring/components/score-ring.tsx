@@ -1,7 +1,5 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-
 export interface ScoreRingProps {
   score: number;
   label?: string;
